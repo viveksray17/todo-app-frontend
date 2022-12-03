@@ -27,7 +27,7 @@ interface Todo {
 function App() {
 	const [todos, setTodos] = useState<Todo[]>([]);
 	const fetchTodos = async() => {
-		const todos = await fetchData<Todo[]>("http://localhost:5000/todos")
+		const todos = await fetchData<Todo[]>(`${TODO_HOST}/todos`)
 		setTodos(todos)
 	}
 	const todoRef = useRef<HTMLInputElement>(null);
